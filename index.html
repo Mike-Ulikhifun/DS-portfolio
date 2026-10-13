@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 24px 8%;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 45px 20px;
+    }
+
+    h2 {
+      color: #2563eb;
+    }
+
+    .hero {
+      text-align: center;
+      padding-top: 65px;
+      padding-bottom: 65px;
+    }
+
+    .project {
+      background: white;
+      padding: 20px;
+      margin: 16px 0;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px #00000010;
+    }
+
+    .button {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      background: #111827;
+      color: white;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Ulikhifun Mike</h1>
+    <p>Welcome to my portfolio</p>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Hello, I am Ulikhifun Mike!</h2>
+    <p>
+      I am an aspiring professional passionate about
+      technology, creativity, and solving problems.
+    </p>
+    <a class="button" href="#projects">View My Projects</a>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+     I am a data Scientist with hands-on training in data science modelling. Skilled in Python, pandas, NumPy, scikit-learn, 
+SQL and MongoDB, with knowledge of taking projects from messy raw data to evaluated, interpretable models. Build regression models, 
+classification and time series forecasting, with a habit of turning statistical findings into clear, 
+actionable recommendations for decision-makers.</p>
+  
+  </section>
+  
+  <section id="skills">
+    <h2>My Skills</h2>
+    <p>Classification · Correlation Analysis · Data Cleaning · Data Visualization · Exploratory Data Analysis · Feature Engineering · Gradient Boosting · Logistic Regression · MongoDB · Python · Time Series · Pandas · Scikit-learn (Sklearn)</p>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+
+    <div class="project">
+      <h3>Project One: Predicting Housing Prices in Buenos Aires (Argentina's Capital and Largest City) with Linear Regression</h3>
+      <p>This project created a solid basis for supervised machine learning-based flat price prediction in Buenos Aires. 
+Raw real estate data with uneven market segmentation, missing values, outliers, redundant columns, and categorical variables 
+that regression models could not use directly presented the first challenge. By merging the data, limiting the target market, cleaning 
+observations, engineering geographical features, eliminating variables that can result in data leakage, encoding neighbourhood 
+information, and establishing a train-test split, these problems were resolved. This procedure produced a structured dataset with 
+6,247 observations from 43,029 raw listings. 
+               
+The creation of a repeatable and rationally sound data preparation procedure that facilitated trustworthy model training and assessment 
+was the main accomplishment. Predictive models were trained and tested on previously unknown flat listings using the prepared dataset. 
+The accuracy of price forecasts and their potential use in assisting with real estate appraisal and decision-making were then evaluated
+by evaluating the model's performance.</p> 
+
+<b>Objective</b>
+Build a model that generalises well to unseen listings and identify the most predictive property features.
+      
+<b>What I Did</b>
+<ol>
+    <li>
+        <strong>Data Loading and Cleaning:</strong>
+        Imported, merged and cleaned listing data from multiple CSV files, handling missing values, outliers and type conversions.
+    </li>
+
+    <li>
+        <strong>Baseline Model Development:</strong>
+        Built a baseline linear regression model in scikit-learn.
+    </li>
+
+    <li>
+        <strong>Model Evaluation:</strong>
+        Evaluated RMSE, MAE and R² on training and test sets.
+    </li>
+
+    <li>
+        <strong>Regularisation:</strong>
+        Applied Ridge and Lasso regularisation with standardised features to reduce overfitting on high-cardinality encoded data.
+    </li>
+
+    <li>
+        <strong>Model Comparison and Selection:</strong>
+        Compared models in a structured evaluation table and selected the best-generalising one.
+    </li>
+</ol>
+      
+<b>Results</b>
+      MODEL COMPARISON TABLE
+============================================================
+                   Train_RMSE  Test_RMSE      Gap
+Model                                            
+Baseline             59700.25   57576.13 -2124.12
+Linear Regression    34200.43   33088.37 -1112.06
+Ridge (CV-tuned)     34203.95   33071.27 -1132.68
+Lasso (CV-tuned)     34203.20   33069.18 -1134.01
+
+Selected Model: Lasso Regression (CV-Tuned)
+Why: Lasso achieved the lowest test RMSE of $33,069.18, slightly outperforming Ridge and Linear Regression. 
+Since all three predictive models performed almost identically, Lasso is a reasonable choice because it combined strong predictive performance with feature selection and interpretability.
+Lasso reduced the test RMSE by approximately 42.6% compared with the baseline, showing that the selected features provide useful information for predicting property prices.
+
+<b>What I Learnt from the Model</b>
+<ul>
+    <li>
+        <strong>Test RMSE matters most:</strong>
+        I should evaluate models on unseen data rather than relying only on training performance.
+    </li>
+
+    <li>
+        <strong>Regularisation helps control overfitting:</strong>
+        Ridge and Lasso penalise large coefficients, helping models generalise to new properties.
+    </li>
+
+    <li>
+        <strong>Model performance was nearly identical:</strong>
+        The differences between Linear Regression, Ridge, and Lasso were very small, so Lasso's numerical advantage does not prove that it is significantly better.
+    </li>
+
+    <li>
+        <strong>Property size is the strongest predictor:</strong>
+        The <code>surface_covered_in_m2</code> feature had the largest positive coefficient, indicating that property size is an important predictor of price.
+    </li>
+
+    <li>
+        <strong>Interpretability matters:</strong>
+        Lasso can set some coefficients to zero, simplifying a model. However, in this experiment, it eliminated only 1 of 59 features (1.7%), so its sparsity advantage was modest.
+    </li>
+
+    <li>
+        <strong>The model has limitations:</strong>
+        Residual analysis suggests that prediction errors increase for more expensive properties. The model may therefore be less reliable for luxury apartments.
+    </li>
+</ul>
+      
+  <b>Key Takeaway</b>
+The most important lesson was that the best model is not necessarily the one with the lowest error alone. 
+We must also consider interpretability, generalisation, complexity, and the consequences of prediction errors.
+For this project, I practically selected Lasso Regression (CV-Tuned) because it achieved the lowest test RMSE while offering some feature-selection benefits. 
+However, before deploying it in production, I investigated the larger errors for expensive properties and compared its performance with nonlinear models.
+
+  <b>Tools</b>
+Python 3, pandas, NumPy, scikit-learn, Jupyter Notebook (ipykernel), Category_encoders, Matplotlib, glob, Custom wrangle.py module
+      
+     <a href="https://github.com/" target="_blank"
+         rel="noopener noreferrer">View Project</a>
+    </div>
+
+    <div class="project">
+      <h3>Project Two: Time Series Modelling of Air Quality in Nairobi (Kenya's Capital and Largest City)</h3>
+      <p></p>
+      <a href="https://github.com/" target="_blank"
+         rel="noopener noreferrer">View Project</a>
+    </div>
+
+     <div class="project">
+      <h3>Project Three: Time Series Modelling of Air Quality in Nairobi (Kenya's Capital and Largest City)</h3>
+      <p></p>
+      <a href="https://github.com/" target="_blank"
+         rel="noopener noreferrer">View Project</a>
+    </div>
+
+     <div class="project">
+      <h3>Project Four: Time Series Modelling of Air Quality in Nairobi (Kenya's Capital and Largest City)</h3>
+      <p>The problem addressed was the increasing volume of air quality data in Nairobi and the need to analyse PM2.5 pollution over time.
+The growing amount of Nairobi's air quality data and the requirement to assess PM2.5 pollution over time were the issues being addressed.  
+Sensor readings are time-dependent, meaning past pollution levels may help predict future levels. 
+Therefore, time series analysis is necessary to identify trends, patterns, and potential changes in air quality.
+
+MongoDB Atlas Database was selected because it stores large volumes of time-stamped data, supports flexible document structures, 
+enables efficient time-range queries through timestamp indexing, and can scale horizontally as data grows. Unlike Excel, which 
+has a row limit, MongoDB can accommodate expanding datasets. Its flexible schema also allows sensors to report different measurements 
+without requiring database restructuring. The project contained 10,000 documents from ten Nairobi sensors, providing a foundation for 
+analysis.
+
+Data wrangling was carried out using Python, PyMongo, and pandas to extract PM2.5 readings from the MongoDB database, identify and 
+handle missing values, convert timestamps into datetime format, and arrange observations in chronological order. The resulting clean 
+and structured time-series dataset was prepared for subsequent predictive modelling and the analysis of air quality trends in Nairobi.
+
+Predictive modelling was conducted using linear regression with lag features, whereby previous PM2.5 readings were used to predict 
+future pollution levels. Model performance was evaluated using Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and the 
+coefficient of determination (R²), with the results compared against a persistence baseline. The modelling process provided a basis for 
+assessing predictive accuracy, identifying air pollution patterns, and supporting evidence-based air quality management in Nairobi.</p>
+
+<b>Objective</b>
+Forecast future air quality values and compare model families on held-out future data.
+       
+ <b>What I Did</b>
+<ul>
+    <li>Queried and prepared time-stamped data from a MongoDB database</li>
+    <li>Constructed lagged features and applied linear regression with time-aware train/test splits</li>
+    <li>Fit and interpreted AR(p) models for temporal forecasting</li>
+    <li>Compared AR and ARMA models and evaluated forecast performance on held-out future data</li>
+</ul>
+
+       <b>Results</b>
+       COMPREHENSIVE MODEL COMPARISON
+====================================================================================
+                        Model                              Description           MAE
+       Baseline (Persistence)                         Tomorrow = Today       9.259470
+       Linear Regression:          Linear regression with 1 lag feature       8.796497
+       AR Model:              Autoregressive model with selected order       8.518713
+       ARMA(2,1)                                AR(2) + MA(1) combined       7.940539
+
+  <b>Why ARMA(2,1) Is the Best</b>
+<ul>
+  <li>
+    <strong>Lowest prediction error:</strong>
+    Its MAE of 7.94 means its predictions differ from actual
+    values by an average absolute amount of 7.94 units,
+    assuming the target's original units.
+  </li>
+
+  <li>
+    <strong>Combines two approaches:</strong>
+    The AR(2) component uses the previous two observations,
+    while the MA(1) component models the influence of the
+    previous period's forecast error.
+  </li>
+
+  <li>
+    <strong>Improves on the baseline:</strong>
+    Its MAE is approximately 14.3% lower than the baseline
+    MAE of 9.26.
+  </li>
+
+  <li>
+    <strong>Captures temporal patterns:</strong>
+    Combining autoregressive and moving-average components
+    can capture patterns that a simple persistence model
+    or a basic linear regression may miss.
+  </li>
+</ul>
+
+       <h3>What I Learnt</h3>
+
+<ul>
+  <li>
+    <strong>Simple baselines are important:</strong>
+    The persistence model provides a benchmark to determine
+    whether more advanced models add value.
+  </li>
+
+  <li>
+    <strong>Combining model components can improve predictions:</strong>
+    ARMA incorporates both past observations and past
+    forecast errors.
+  </li>
+
+  <li>
+    <strong>MAE makes model comparison practical:</strong>
+    Lower MAE means smaller average absolute prediction errors.
+  </li>
+
+  <li>
+    <strong>Actual results matter:</strong>
+    Because the Linear Regression and AR Model values are
+    estimates, we should compute their actual MAE values
+    before making a definitive comparison across all four models.
+  </li>
+</ul>
+
+       <b>What I Learnt</b>
+
+<ul>
+  <li>
+    <strong>Simple baselines are important:</strong>
+    The persistence model provides a benchmark to determine
+    whether more advanced models add value.
+  </li>
+
+  <li>
+    <strong>Combining model components can improve predictions:</strong>
+    ARMA incorporates both past observations and past
+    forecast errors.
+  </li>
+
+  <li>
+    <strong>MAE makes model comparison practical:</strong>
+    Lower MAE means smaller average absolute prediction errors.
+  </li>
+
+  <li>
+    <strong>Actual results matter:</strong>
+    Because the Linear Regression and AR Model values are
+    estimates, we should compute their actual MAE values
+    before making a definitive comparison across all four models.
+  </li>
+</ul>
+
+<p> <b>Key Takeaway</b>
+ARMA(2,1) emerged as the leading model, achieving the lowest reported Mean Absolute Error (MAE) of 7.94, outperforming the 
+baseline persistence model. This highlights the potential of combining autoregressive and moving-average components to improve 
+forecasting accuracy. Before deployment, its performance should be validated on unseen time-series data, and actual MAE values 
+should be calculated for all models to ensure a fair and reliable comparison.</p>
+
+  <b>Tools</b>
+<p> Python 3, pandas, NumPy, scikit-learn, Jupyter Notebook (ipykernel), MongoDB, statsmodels, Custom wrangle.py</p>  
+      <a href="https://github.com/" target="_blank"
+         rel="noopener noreferrer">View Project</a>
+    </div>
+
+     <div class="project">
+      <h3>Project Five: Time Series Modelling of Air Quality in Nairobi (Kenya's Capital and Largest City)</h3>
+      <p></p>
+      <a href="https://github.com/" target="_blank"
+         rel="noopener noreferrer">View Project</a>
+    </div>
+
+    
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: your.email@example.com</p>
+    <p>
+      GitHub:
+      <a href="https://github.com/">My GitHub Profile</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2026 Your Name. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
