@@ -160,7 +160,7 @@ Build a model that generalises well to unseen listings and identify the most pre
     </li>
 </ol>
       
-<b>Results</b>
+<p><b>Results</b>
       MODEL COMPARISON TABLE
 ============================================================
                    Train_RMSE  Test_RMSE      Gap
@@ -170,11 +170,11 @@ Linear Regression    34200.43   33088.37 -1112.06
 Ridge (CV-tuned)     34203.95   33071.27 -1132.68
 Lasso (CV-tuned)     34203.20   33069.18 -1134.01
 
-Selected Model: Lasso Regression (CV-Tuned)
+<b>Selected Model: Lasso Regression (CV-Tuned)</b>
 Why: Lasso achieved the lowest test RMSE of $33,069.18, slightly outperforming Ridge and Linear Regression. 
 Since all three predictive models performed almost identically, Lasso is a reasonable choice because it combined strong predictive performance with feature selection and interpretability.
 Lasso reduced the test RMSE by approximately 42.6% compared with the baseline, showing that the selected features provide useful information for predicting property prices.
-
+</p>
 <b>What I Learnt from the Model</b>
 <ul>
     <li>
@@ -388,7 +388,7 @@ with approximately 64.26% experiencing severe damage, providing a foundation for
   <li>Trained decision tree classifiers and compared their predictive performance and interpretability with logistic regression models.</li>
   <li>Interpreted statistical findings and connected model results to real-world decision-making in humanitarian response, particularly earthquake damage assessment and building vulnerability identification.</li>
 </ul></p> 
-       Model Comparison:
+  <p>     Model Comparison:
 ==================================================
 Model                     Test Accuracy  
 ==================================================
@@ -401,7 +401,7 @@ Improvement over baseline:
   Logistic Regression: +0.0638
   Decision Tree: +0.0516
 
-✗ Logistic Regression wins by 0.0122
+✗ Logistic Regression wins by 0.0122 </p>
 
 <p>The table compares three models used to predict severe building damage following the 2015 Nepal earthquake in Gorkha district. 
 The baseline model achieved 64.22% accuracy, while logistic regression achieved the highest accuracy of 70.60%, representing an 
@@ -428,19 +428,127 @@ complement engineering inspections and local assessments rather than replace pro
 
       <div class="project">
       <h3>Project Four: </h3>
-      <p></p>
+      <p>Ask a home buyer to describe their dream house, and they probably won't begin with the height of the basement ceiling or the 
+proximity to an east-west railroad. But this playground competition's dataset proves that much more influences price negotiations than 
+the number of bedrooms or a white-picket fence. With 79 explanatory variables describing (almost) every aspect of residential homes in 
+Ames, Iowa, this competition challenges you to predict the final price of each home. The Ames Housing Dataset is a collection of 
+residential property sales data from Ames, Iowa, covering homes sold between 2006 and 2010. It was compiled by Dean De Cock in 2011 
+from the city’s property records and contains 79 explanatory variables describing housing characteristics, including location, size, 
+quality, condition, and amenities. The dataset supports predictive analytics and machine learning for property valuation. Real estate 
+professionals can use similar models to estimate prices, guide investment decisions, improve pricing strategies, assess market trends, and 
+help buyers and sellers make informed decisions.
+
+The dataset aims to develop models that accurately predict residential property sale prices based on their features. It addresses 
+the challenge of estimating property values objectively in a market where prices depend on multiple factors. I was to predict residential 
+sale prices (SalePrice) for homes in Ames, Iowa, using the Kaggle House Prices: Advanced Regression Techniques dataset. It has 1,460 
+training rows, 1,459 test rows and 79 features.</p>
+        
+<p><b>objective</b>
+The goal is to find the most accurate regressor and generate a competition submission.</p>
+        
+<p><b>What I did</b>
+
+<ul>
+  <li>
+    <strong>Explored the data:</strong>
+    Reviewed missing values, duplicates (none), and target statistics.
+    SalePrice is right-skewed (skewness 1.88, kurtosis 6.54).
+  </li>
+
+  <li>
+    <strong>Built a leak-safe preprocessing pipeline:</strong>
+    Used a ColumnTransformer with median imputation and scaling for
+    36 numeric features. For 43 categorical features, it used
+    most-frequent imputation and one-hot encoding with
+    handle_unknown='ignore'.
+  </li>
+
+  <li>
+    <strong>Compared four models:</strong>
+    Trained Linear Regression, Ridge (&alpha; = 10),
+    Random Forest (300 trees), and Gradient Boosting
+    (300 estimators, depth 3) on an 80/20 split with
+    random_state = 42.
+  </li>
+
+  <li>
+    <strong>Evaluated on held-out data:</strong>
+    Scored every model on the 292-row validation set using
+    RMSE and R&sup2;.
+  </li>
+
+  <li>
+    <strong>Produced predictions:</strong>
+    Refit the best model on all 1,460 rows, predicted the test
+    set, and exported submission_alt.csv.
+  </li>
+</ul>
+</p>
+
+<p> Results
+Model	                RMSE ($)   R²
+Linear Regression	29,474	0.887
+Ridge Regression	30,646	0.878
+Random Forest	        28,398	0.895
+Gradient Boosting	25,897	0.913
+
+Each score came from predicting the same validation split and comparing against actual prices. Gradient Boosting had the lowest error 
+and highest R², so it was selected. </p>
+
+<p>  <b>Discussion</b>
+
+Gradient Boosting beat Random Forest by about $2,500 RMSE and the linear models by roughly $3,600–4,700. That suggests nonlinear 
+patterns and feature interactions matter in this data. Ridge scored slightly worse than plain Linear Regression, so an untuned α=10 
+added no value here.
+
+ <b>Why Gradient Boosting?</b>
+
+It builds trees sequentially, with each tree correcting the previous one’s errors. That handles mixed feature types, nonlinear 
+effects and interactions without manual feature engineering. The data-driven comparison confirmed it: it won on both metrics.
+
+<b>Key Takeaways</b>
+1. Wrapping preprocessing and model in one Pipeline keeps validation honest and the workflow reproducible.
+2. Ensemble methods outperformed linear models on this tabular problem.
+3. Several improvements would strengthen the project:
+<ul>
+  <li>
+    <strong>Log-transform the target:</strong>
+    The notebook’s own EDA shows heavy skew, but the target is modelled raw.
+  </li>
+  <li>
+    <strong>Add cross-validation:</strong>
+    It currently uses a single split, so the ranking could shift with a different seed.
+  </li>
+  <li>
+    <strong>Tune hyperparameters:</strong>
+    Ridge’s alpha and Gradient Boosting’s settings were never tuned.
+  </li>
+  <li>
+    <strong>Engineer features:</strong>
+    Totals such as combined square footage or bathrooms were not created.
+  </li>
+  <li>
+    <strong>Fix the Gradient Boosting comment:</strong>
+    It wrongly mentions L2 regularisation.
+  </li>
+</ul>
+4. No Kaggle leaderboard score is recorded, so real test performance is unverified.
+  
+<b>What the Model Solved</b>
+
+It delivers a working end-to-end pricing estimator: raw, messy housing data in, predictions out. On unseen validation homes, it 
+explains about 91% of price variance, with a typical error near $26K on homes averaging about $181K. It produced a 
+ready-to-submit Kaggle file and a solid baseline to build on.  
+      
+<b>Tools</b>
+Python 3, pandas, NumPy, scikit-learn, Jupyter Notebook (ipykernel), Category_encoders, Matplotlib
+      </p>
+
+        
       <a href="https://github.com/" target="_blank"
          rel="noopener noreferrer">View Project</a>
     </div>
-
-     <div class="project">
-      <h3>Project Five: </h3>
-      <p></p>
-      <a href="https://github.com/" target="_blank"
-         rel="noopener noreferrer">View Project</a>
-    </div>
-
-    
+   
   </section>
 
   <section id="contact">
