@@ -209,7 +209,7 @@ Lasso reduced the test RMSE by approximately 42.6% compared with the baseline, s
 </ul>
       
   <b>Key Takeaway</b>
-The most important lesson was that the best model is not necessarily the one with the lowest error alone. 
+The most important lesson was that the best model isn't necessarily the one with the lowest error. 
 We must also consider interpretability, generalisation, complexity, and the consequences of prediction errors.
 For this project, I practically selected Lasso Regression (CV-Tuned) because it achieved the lowest test RMSE while offering some feature-selection benefits. 
 However, before deploying it in production, I investigated the larger errors for expensive properties and compared its performance with nonlinear models.
@@ -363,25 +363,62 @@ should be calculated for all models to ensure a fair and reliable comparison.</p
 
      <div class="project">
       <h3>Project Three: Predicting Earthquake Damage in Nepal with Classification Models</h3>
-      <p>This project addressed the problem of managing and analysing large, interconnected datasets from Nepal’s 2015 Gorkha earthquake. 
+      <p>In April 2015, A major earthquake hit Nepal. Classifying building damage after the Nepal earthquake was needed to support humanitarian 
+decision-making. This project addressed the problem of managing and analysing large, interconnected datasets from Nepal’s 2015 Gorkha earthquake. 
 The four related tables contained building structures, damage assessments, household demographics, and geographical information. 
 Analysing these separately made it difficult to identify damage patterns, assess building vulnerability, and understand the relationship 
 between household characteristics and earthquake impacts. 
         
-        The main objective of this project was to learn how relational databases support efficient data 
-management, accurate analysis, and preparation of reliable data for machine learning. Issues identified included data duplication, inconsistencies, 
-incorrect table joins, missing relationships, and slow analytical queries. These challenges were addressed through database normalisation, primary 
+        The main objective was to learn how relational databases support efficient data management, accurate analysis, and reliable data 
+preparation for machine learning. Issues identified included data duplication, inconsistencies, incorrect table joins, missing relationships, and slow analytical queries. These challenges were addressed through database normalisation, primary 
 and foreign keys, SQL queries, and appropriate use of INNER JOIN and LEFT JOIN. SQLite was used for structured storage and transactional 
 operations, while DuckDB provided faster analytical queries directly from CSV files.
 
-Practical activities I carried out while working on this project included connecting to SQLite, querying tables, counting buildings, identifying foundation types, filtering 
+Practical activities I carried out included connecting to SQLite, querying tables, counting buildings, identifying foundation types, filtering 
 Gorkha data, comparing database performance, and developing a reusable wrangle_nepal_data() function. The function combined relevant 
 datasets, selected building features, and created a binary severe-damage target. The prepared Gorkha dataset contained 70,836 buildings, 
 with approximately 64.26% experiencing severe damage, providing a foundation for subsequent machine learning and earthquake damage prediction</p>
 
+<p> <b>Objective</b>: Predict damage severity from building data and explain results in terms of real-world response.</p>
+       
+<p><b>What I Did</b>
+<ul>
+  <li>Assembled a modelling dataset from a relational SQLite database using SQL joins to combine relevant data from multiple tables.</li>
+  <li>Built logistic regression classifiers and evaluated their performance using accuracy, precision, recall, and confusion matrices.</li>
+  <li>Trained decision tree classifiers and compared their predictive performance and interpretability with logistic regression models.</li>
+  <li>Interpreted statistical findings and connected model results to real-world decision-making in humanitarian response, particularly earthquake damage assessment and building vulnerability identification.</li>
+</ul></p> 
+       Model Comparison:
+==================================================
+Model                     Test Accuracy  
+==================================================
+Baseline                  0.6422         
+Logistic Regression       0.7060         
+Decision Tree             0.6938         
+==================================================
 
+Improvement over baseline:
+  Logistic Regression: +0.0638
+  Decision Tree: +0.0516
 
+✗ Logistic Regression wins by 0.0122
 
+<p>The table compares three models used to predict severe building damage following the 2015 Nepal earthquake in Gorkha district. 
+The baseline model achieved 64.22% accuracy, while logistic regression achieved the highest accuracy of 70.60%, representing an 
+improvement of 6.38 percentage points over the baseline. The decision tree achieved 69.38% accuracy, improving on the baseline 
+by 5.16 percentage points. Logistic regression outperformed the decision tree by 1.22 percentage points, making it the best-performing 
+model based on test accuracy.
+
+Humanitarian Interpretation: These findings suggest that building characteristics, such as age, foundation type, and structural features, 
+can help identify buildings vulnerable to severe earthquake damage. Logistic regression may therefore support humanitarian 
+organisations and local authorities in prioritising building inspections, allocating limited resources, and planning reconstruction 
+efforts. Although the decision tree performed slightly worse, its interpretable decision rules may help explain risk factors to 
+decision-makers. However, accuracy alone is insufficient for determining which model is most suitable for humanitarian intervention. 
+Recall for severely damaged buildings is particularly important because missed high-risk buildings could delay essential assistance. 
+Therefore, precision, recall, and confusion matrices should also be examined before deployment. Ultimately, these models should 
+complement engineering inspections and local assessments rather than replace professional judgement in disaster response and recovery.</p>
+
+<p>Tools: Python, SQL, SQLite, pandas, DuckDB, scikit-learn, wrangle_nepal_data() function</p>
 
 
        
