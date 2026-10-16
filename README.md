@@ -31,12 +31,12 @@
 
 ## Professional Summary
 
-I am a data scientist passionate about extracting meaningful insights
-from data, developing predictive models, and translating analytical
-findings into practical solutions.
+I am a data Scientist with hands-on training in data science modelling. 
+Skilled in Python, pandas, NumPy, scikit-learn, SQL and MongoDB, with experience
+taking projects from messy raw data to evaluated, interpretable models.
 
 My work combines statistical reasoning, machine learning, data
-visualization, and analytical problem-solving to address real-world
+visualisation, and analytical problem-solving to address real-world
 challenges. I focus on building reliable, reproducible, and
 interpretable solutions that support informed decision-making.
 
@@ -54,15 +54,12 @@ solutions deliver meaningful value.
   <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white" alt="SQL" />
   <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="Pandas" />
   <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy" />
-  <img src="https://img.shields.io/badge/SciPy-8CAAE6?style=flat-square&logo=scipy&logoColor=white" alt="SciPy" />
 </p>
 
 ### Machine Learning & Artificial Intelligence
 
 <p>
   <img src="https://img.shields.io/badge/Scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white" alt="Scikit-learn" />
-  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="TensorFlow" />
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch" />
 </p>
 
 ### Data Visualization & Business Intelligence
@@ -71,7 +68,6 @@ solutions deliver meaningful value.
   <img src="https://img.shields.io/badge/Matplotlib-11557C?style=flat-square&logo=python&logoColor=white" alt="Matplotlib" />
   <img src="https://img.shields.io/badge/Seaborn-4C72B0?style=flat-square&logo=python&logoColor=white" alt="Seaborn" />
   <img src="https://img.shields.io/badge/Plotly-3F4F75?style=flat-square&logo=plotly&logoColor=white" alt="Plotly" />
-  <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=flat-square&logo=powerbi&logoColor=black" alt="Power BI" />
 </p>
 
 ### Tools & Development
@@ -80,12 +76,7 @@ solutions deliver meaningful value.
   <img src="https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white" alt="Jupyter" />
   <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git" />
   <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
 </p>
-
-> Keep only the technologies you can confidently use and discuss.
-> Add other tools as your experience develops.
 
 ## Core Competencies
 
@@ -93,59 +84,57 @@ solutions deliver meaningful value.
 - Data Cleaning and Feature Engineering
 - Statistical Analysis and Hypothesis Testing
 - Supervised and Unsupervised Learning
-- Predictive Modeling and Forecasting
+- Predictive Modelling and Forecasting
 - Model Evaluation and Validation
-- Data Visualization and Reporting
-- SQL-Based Data Extraction and Transformation
+- Data Visualisation and Reporting
+- SQL-Based Data and DuckDB Extraction and Transformation
 - Experimental Design and A/B Testing
 - Reproducible Analytical Workflows
 
 ## Featured Projects
 
-### 01. Customer Churn Prediction
+### 01. Predicting Housing Prices in Buenos Aires (Argentina's Capital and Largest City) with Linear Regression
 
-**Objective:** Identify customers who are likely to discontinue a
-service and uncover the factors associated with churn.
-
-**Approach:**
-- Performed exploratory data analysis and data preprocessing.
-- Engineered relevant features and developed classification models.
-- Evaluated performance using precision, recall, F1-score, and ROC-AUC.
-- Interpreted model outputs to identify potential retention strategies.
-
-**Tools:** Python, Pandas, Scikit-learn, Matplotlib, Seaborn
-
-**Repository:** [View Project](YOUR_CHURN_PROJECT_URL)
-
-### 02. Sales Analytics & Business Intelligence
-
-**Objective:** Analyze business performance and identify patterns
-that support better operational and strategic decisions.
+**Objective:** Build a model that generalises well to unseen listings and identify the most predictive property features.
 
 **Approach:**
-- Queried and transformed transactional data using SQL.
-- Examined revenue trends, product performance, and customer segments.
-- Developed visualizations and dashboards to communicate key findings.
-- Identified opportunities for further investigation and optimization.
+- Imported, merged and cleaned listing data from multiple CSV files, handling missing values, outliers and type conversions
+- Built a baseline linear regression model in scikit-learn.
+- Evaluated RMSE, MAE and R² on training and test sets.
+- Applied Ridge and Lasso regularisation with standardised features to reduce overfitting on high-cardinality encoded data.
+- Compared models in a structured evaluation table and selected the best-generalising one.
 
-**Tools:** SQL, Python, Pandas, Power BI
+**Tools:** Python 3, pandas, NumPy, scikit-learn, Jupyter Notebook (ipykernel), Category_encoders, Matplotlib, glob, Custom wrangle.py module
 
-**Repository:** [View Project](YOUR_SALES_PROJECT_URL)
+**Repository:** [View Project](house_pricesPredicing)
 
-### 03. Time-Series Forecasting
+### 02. Time Series Modelling of Air Quality in Nairobi (Kenya's Capital and Largest City)
 
-**Objective:** Use historical observations to forecast future values
-and evaluate predictive performance.
+**Objective:** Time Series Modelling of Air Quality in Nairobi (Kenya's Capital and Largest City)
 
 **Approach:**
-- Investigated trends, seasonality, and temporal patterns.
-- Established baseline forecasting methods.
-- Applied time-aware validation to avoid data leakage.
-- Compared forecast accuracy using appropriate error metrics.
+- Queried and prepared time-stamped data from a MongoDB database.
+- Constructed lagged features and applied linear regression with time-aware train/test splits.
+- Fit and interpreted AR(p) models for temporal forecasting.
+- Compared AR and ARMA models and evaluated forecast performance on held-out future data.
 
-**Tools:** Python, Pandas, Statsmodels, Scikit-learn, Matplotlib
+**Tools:** Python 3, pandas, NumPy, scikit-learn, Jupyter Notebook (ipykernel), MongoDB, statsmodels, Custom wrangle.py
 
-**Repository:** [View Project](YOUR_FORECASTING_PROJECT_URL)
+**Repository:** [View Project](Time_Series_Model)
+
+### 03. Predicting Earthquake Damage in Nepal with Classification Models
+
+**Objective:** Predict the damage severity from building data and explain results in terms of real-world response.
+
+**Approach:**
+- Assembled a modelling dataset from a relational SQLite database using SQL joins to combine relevant data from multiple tables
+- Built logistic regression classifiers and evaluated their performance using accuracy, precision, recall, and confusion matrix
+- Trained decision tree classifiers and compared their predictive performance and interpretability with logistic regression model
+- Interpreted statistical findings and connected model results to real-world decision-making in humanitarian response, particularly earthquake damage assessment and building vulnerability identification
+
+**Tools:** Python, SQL, SQLite, pandas, DuckDB, scikit-learn, wrangle_nepal_data() function
+
+**Repository:** [View Project](PREDICTING_EARTHQUAKE_DAMAGE_URL)
 
 > These are project templates. Replace them with your actual projects,
 > documented methodology, and verified results.
@@ -174,10 +163,10 @@ are reliable, interpretable, and aligned with the problem being solved.
 
 ## Current Learning & Development
 
-- Advanced machine learning and model interpretability
-- Production-ready machine learning pipelines
-- Cloud-based analytics and data engineering
-- MLOps, model deployment, and monitoring
+- Random Forests and Gradient Boosting for Bankruptcy Prediction in Poland and Taiwan
+- Unsupervised Learning for Consumer Finance Segmentation
+- Experimentation and Decision-Making
+- Financial Volatility Modelling and End-to-End Deployment
 - Responsible AI and ethical data practices
 
 ## Collaboration & Interests
@@ -185,7 +174,7 @@ are reliable, interpretable, and aligned with the problem being solved.
 I welcome opportunities to collaborate on projects involving:
 
 - Applied data science and machine learning
-- Predictive analytics and statistical modeling
+- Predictive analytics and statistical modelling
 - Business intelligence and decision support
 - Open-source analytical tools and educational projects
 - Data-driven solutions to real-world problems
@@ -197,31 +186,27 @@ research, and continuous professional development.
 
 <p align="center">
   <img
-    src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&hide_border=true&rank_icon=github&theme=transparent"
+    src="https://github-readme-stats.vercel.app/api?username=https://github.com/Mike-Ulikhifun/DS-portfolio&show_icons=true&hide_border=true&rank_icon=github&theme=transparent"
     alt="GitHub statistics"
   />
 </p>
 
 <p align="center">
   <img
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_GITHUB_USERNAME&layout=compact&hide_border=true&theme=transparent"
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=[YOUR_GITHUB_USERNAME](https://github.com/Mike-Ulikhifun/DS-portfolio)&layout=compact&hide_border=true&theme=transparent"
     alt="Most used programming languages"
   />
 </p>
-
-> GitHub statistics are provided by an external service and may
-> occasionally be unavailable. Language percentages reflect repository
-> contents, not necessarily overall proficiency.
 
 ## Let's Connect
 
 I am open to professional conversations, knowledge sharing,
 and collaborations that create meaningful value through data.
 
-- **LinkedIn:** [Connect with me](YOUR_LINKEDIN_URL)
-- **Portfolio:** [Explore my work](YOUR_PORTFOLIO_URL)
-- **Email:** [Get in touch](mailto:YOUR_EMAIL)
-- **GitHub:** [Explore my repositories](YOUR_GITHUB_URL)
+- **LinkedIn:** [Connect with me](www.linkedin.com/in/mike-ulikhifun)
+- **Portfolio:** [Explore my work](https://github.com/Mike-Ulikhifun/DS-portfolio)
+- **Email:** [Get in touch](mailto:nosamike20@gmail.com)
+- **GitHub:** [Explore my repositories](https://github.com/Mike-Ulikhifun/DS-portfolio)
 
 ---
 
