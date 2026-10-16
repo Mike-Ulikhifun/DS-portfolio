@@ -105,7 +105,7 @@ solutions deliver meaningful value.
 
 **Tools:** Python 3, pandas, NumPy, scikit-learn, Jupyter Notebook (ipykernel), Category_encoders, Matplotlib, glob, Custom wrangle.py module
 
-**Repository:** [View Project](house_pricesPredicing)
+**Repository:** [View Project](BuenosAires-Gitfl.ipynb)
 
 ### 02. Time Series Modelling of Air Quality in Nairobi (Kenya's Capital and Largest City)
 
