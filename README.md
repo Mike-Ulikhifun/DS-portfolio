@@ -4,7 +4,7 @@
      Replace all placeholders with your actual information.
 ========================================================== -->
 
-<h1 align="center">Hi, I'm Your Mike Ulikhifun</h1>
+<h1 align="center">Hi, I'm Mike Ulikhifun</h1>
 
 <h3 align="center">
   Data Scientist | Machine Learning | Statistical Analysis
