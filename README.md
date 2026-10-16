@@ -19,7 +19,7 @@
   <a href="www.linkedin.com/in/mike-ulikhifun">
     <img src="https://img.shields.io/badge/LinkedIn-Professional%20Profile-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
-  <a href="YOUR_PORTFOLIO_URL">
+  <a href="https://github.com/Mike-Ulikhifun/DS-portfolio">
     <img src="https://img.shields.io/badge/Portfolio-Explore%20My%20Work-333333?style=flat-square&logo=githubpages&logoColor=white" alt="Portfolio" />
   </a>
   <a href="mailto:YOUR_EMAIL">
@@ -119,7 +119,8 @@ solutions deliver meaningful value.
 
 **Tools:** Python 3, pandas, NumPy, scikit-learn, Jupyter Notebook (ipykernel), MongoDB, statsmodels, Custom wrangle.py
 
-**Repository:** [View Project](Time_Series_Model)
+**Repository:** [View Project](ARiMA_Air_quality_Time_series_Partn2
+)
 
 ### 03. Predicting Earthquake Damage in Nepal with Classification Models
 
@@ -133,7 +134,7 @@ solutions deliver meaningful value.
 
 **Tools:** Python, SQL, SQLite, pandas, DuckDB, scikit-learn, wrangle_nepal_data() function
 
-**Repository:** [View Project](PREDICTING_EARTHQUAKE_DAMAGE_URL)
+**Repository:** [View Project](L4_predict_earthquake_nepal_n2)
 
 > These are project templates. Replace them with your actual projects,
 > documented methodology, and verified results.
