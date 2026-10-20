@@ -71,6 +71,40 @@
       color: white;
       padding: 20px;
     }
+    table {
+            width: 70%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e6f2ff;
+        }
+
+        td:last-child, th:last-child {
+            text-align: right;
+        }
   </style>
 </head>
 
@@ -160,15 +194,46 @@ Build a model that generalises well to unseen listings and identify the most pre
     </li>
 </ol>
       
-<p><b>Results</b>
-      MODEL COMPARISON TABLE
-============================================================
-                   Train_RMSE  Test_RMSE      Gap
-Model                                            
-Baseline             59700.25   57576.13 -2124.12
-Linear Regression    34200.43   33088.37 -1112.06
-Ridge (CV-tuned)     34203.95   33071.27 -1132.68
-Lasso (CV-tuned)     34203.20   33069.18 -1134.01
+<h2>Results</h2>
+    <h3>Model Comparison Table</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Train_RMSE</th>
+                <th>Test_RMSE</th>
+                <th>Gap</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Baseline</td>
+                <td>59700.25</td>
+                <td>57576.13</td>
+                <td>-2124.12</td>
+            </tr>
+            <tr>
+                <td>Linear Regression</td>
+                <td>34200.43</td>
+                <td>33088.37</td>
+                <td>-1112.06</td>
+            </tr>
+            <tr>
+                <td>Ridge (CV-tuned)</td>
+                <td>34203.95</td>
+                <td>33071.27</td>
+                <td>-1132.68</td>
+            </tr>
+            <tr>
+                <td>Lasso (CV-tuned)</td>
+                <td>34203.20</td>
+                <td>33069.18</td>
+                <td>-1134.01</td>
+            </tr>
+        </tbody>
+    </table>
 
 <b>Selected Model: Lasso Regression (CV-Tuned)</b>
 Why: Lasso achieved the lowest test RMSE of $33,069.18, slightly outperforming Ridge and Linear Regression. 
@@ -254,14 +319,44 @@ Forecast future air quality values and compare model families on held-out future
     <li>Compared AR and ARMA models and evaluated forecast performance on held-out future data</li>
 </ul>
 
-       <b>Results</b>
-       COMPREHENSIVE MODEL COMPARISON
-====================================================================================
-                        Model                              Description           MAE
-       Baseline (Persistence)                         Tomorrow = Today       9.259470
-       Linear Regression:          Linear regression with 1 lag feature       8.796497
-       AR Model:              Autoregressive model with selected order       8.518713
-       ARMA(2,1)                                AR(2) + MA(1) combined       7.940539
+     <h2>Results</h2>
+    <h3>Comprehensive Model Comparison</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Description</th>
+                <th>MAE</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Baseline (Persistence)</td>
+                <td>Tomorrow = Today</td>
+                <td>9.259470</td>
+            </tr>
+
+            <tr>
+                <td>Linear Regression</td>
+                <td>Linear regression with 1 lag feature</td>
+                <td>8.796497</td>
+            </tr>
+
+            <tr>
+                <td>AR Model</td>
+                <td>Autoregressive model with selected order</td>
+                <td>8.518713</td>
+            </tr>
+
+            <tr>
+                <td>ARMA(2,1)</td>
+                <td>AR(2) + MA(1) combined</td>
+                <td>7.940539</td>
+            </tr>
+        </tbody>
+    </table>
 
   <b>Why ARMA(2,1) Is the Best</b>
 <ul>
@@ -388,14 +483,33 @@ with approximately 64.26% experiencing severe damage, providing a foundation for
   <li>Trained decision tree classifiers and compared their predictive performance and interpretability with logistic regression models.</li>
   <li>Interpreted statistical findings and connected model results to real-world decision-making in humanitarian response, particularly earthquake damage assessment and building vulnerability identification.</li>
 </ul></p> 
-  <p>     Model Comparison:
-==================================================
-Model                     Test Accuracy  
-==================================================
-Baseline                  0.6422         
-Logistic Regression       0.7060         
-Decision Tree             0.6938         
-==================================================
+     <h2>Model Comparison</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Test Accuracy</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Baseline</td>
+                <td>0.6422</td>
+            </tr>
+
+            <tr>
+                <td>Logistic Regression</td>
+                <td>0.7060</td>
+            </tr>
+
+            <tr>
+                <td>Decision Tree</td>
+                <td>0.6938</td>
+            </tr>
+        </tbody>
+    </table>
 
 Improvement over baseline:
   Logistic Regression: +0.0638
@@ -485,12 +599,43 @@ The goal is to find the most accurate regressor and generate a competition submi
 </ul>
 </p>
 
-<p> Results
-Model	                RMSE ($)   R²
-Linear Regression	29,474	0.887
-Ridge Regression	30,646	0.878
-Random Forest	        28,398	0.895
-Gradient Boosting	25,897	0.913
+<h2>Results</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>RMSE ($)</th>
+                <th>R²</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Linear Regression</td>
+                <td>29,474</td>
+                <td>0.887</td>
+            </tr>
+
+            <tr>
+                <td>Ridge Regression</td>
+                <td>30,646</td>
+                <td>0.878</td>
+            </tr>
+
+            <tr>
+                <td>Random Forest</td>
+                <td>28,398</td>
+                <td>0.895</td>
+            </tr>
+
+            <tr>
+                <td>Gradient Boosting</td>
+                <td>25,897</td>
+                <td>0.913</td>
+            </tr>
+        </tbody>
+    </table>
 
 Each score came from predicting the same validation split and comparing against actual prices. Gradient Boosting had the lowest error 
 and highest R², so it was selected. </p>
