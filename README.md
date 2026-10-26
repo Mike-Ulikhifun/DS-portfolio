@@ -119,7 +119,7 @@ solutions deliver meaningful value.
 
 **Tools:** Python 3, pandas, NumPy, scikit-learn, Jupyter Notebook (ipykernel), MongoDB, statsmodels, Custom wrangle.py
 
-**Repository:** [View Project](https://github.com/Mike-Ulikhifun/DS-portfolio/tree/main/Assess/Kaggle%20Ames%20Housing)
+**Repository:** [View Project](https://github.com/Mike-Ulikhifun/DS-portfolio/tree/main/Assess/time%20series%20modellng)
 )
 
 ### 03. Predicting Earthquake Damage in Nepal with Classification Models
