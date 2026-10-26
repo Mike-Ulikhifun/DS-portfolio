@@ -105,7 +105,7 @@ solutions deliver meaningful value.
 
 **Tools:** Python 3, pandas, NumPy, scikit-learn, Jupyter Notebook (ipykernel), Category_encoders, Matplotlib, glob, Custom wrangle.py module
 
-**Repository:** [View Project](BuenosAires-Gitfl.ipynb)
+**Repository:** [View Project](Assess/Buenos Aires Charts/)
 
 ### 02. Time Series Modelling of Air Quality in Nairobi (Kenya's Capital and Largest City)
 
@@ -119,12 +119,12 @@ solutions deliver meaningful value.
 
 **Tools:** Python 3, pandas, NumPy, scikit-learn, Jupyter Notebook (ipykernel), MongoDB, statsmodels, Custom wrangle.py
 
-**Repository:** [View Project](ARiMA_Air_quality_Time_series_Partn2
+**Repository:** [View Project]
 )
 
 ### 03. Predicting Earthquake Damage in Nepal with Classification Models
 
-**Objective:** Predict the damage severity from building data and explain results in terms of real-world response.
+**Objective:** Predict damage severity from building data and explain results in real-world terms.
 
 **Approach:**
 - Assembled a modelling dataset from a relational SQLite database using SQL joins to combine relevant data from multiple tables
@@ -134,7 +134,7 @@ solutions deliver meaningful value.
 
 **Tools:** Python, SQL, SQLite, pandas, DuckDB, scikit-learn, wrangle_nepal_data() function
 
-**Repository:** [View Project](L4_predict_earthquake_nepal_n2)
+**Repository:** [View Project](Assess/Nepal earthquake/)
 
 > These are project templates. Replace them with your actual projects,
 > documented methodology, and verified results.
@@ -182,29 +182,13 @@ I welcome opportunities to collaborate on projects involving:
 I value thoughtful collaboration, clear documentation, reproducible
 research, and continuous professional development.
 
-## GitHub Overview
-
-<p align="center">
-  <img
-    src="https://github-readme-stats.vercel.app/api?username=https://github.com/Mike-Ulikhifun/DS-portfolio&show_icons=true&hide_border=true&rank_icon=github&theme=transparent"
-    alt="GitHub statistics"
-  />
-</p>
-
-<p align="center">
-  <img
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=[YOUR_GITHUB_USERNAME](https://github.com/Mike-Ulikhifun/DS-portfolio)&layout=compact&hide_border=true&theme=transparent"
-    alt="Most used programming languages"
-  />
-</p>
-
 ## Let's Connect
 
 I am open to professional conversations, knowledge sharing,
 and collaborations that create meaningful value through data.
 
 - **LinkedIn:** [Connect with me](www.linkedin.com/in/mike-ulikhifun)
-- **Portfolio:** [Explore my work](https://github.com/Mike-Ulikhifun/DS-portfolio)
+- **Portfolio:** [Explore my work](https://mike-ulikhifun.github.io/DS-portfolio/)
 - **Email:** [Get in touch](mailto:nosamike20@gmail.com)
 - **GitHub:** [Explore my repositories](https://github.com/Mike-Ulikhifun/DS-portfolio)
 
