@@ -105,7 +105,7 @@ solutions deliver meaningful value.
 
 **Tools:** Python 3, pandas, NumPy, scikit-learn, Jupyter Notebook (ipykernel), Category_encoders, Matplotlib, glob, Custom wrangle.py module
 
-**Repository:** [View Project](Assess/Buenos Aires Charts/)
+**Repository:** [View Project](./Assess/Buenos Aires Charts/)
 
 ### 02. Time Series Modelling of Air Quality in Nairobi (Kenya's Capital and Largest City)
 
@@ -134,7 +134,7 @@ solutions deliver meaningful value.
 
 **Tools:** Python, SQL, SQLite, pandas, DuckDB, scikit-learn, wrangle_nepal_data() function
 
-**Repository:** [View Project](Assess/Nepal earthquake/)
+**Repository:** [View Project](./Assess/Nepal earthquake/)
 
 > These are project templates. Replace them with your actual projects,
 > documented methodology, and verified results.
