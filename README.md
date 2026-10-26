@@ -105,7 +105,7 @@ solutions deliver meaningful value.
 
 **Tools:** Python 3, pandas, NumPy, scikit-learn, Jupyter Notebook (ipykernel), Category_encoders, Matplotlib, glob, Custom wrangle.py module
 
-**Repository:** [View Project](./Assess/Buenos Aires Charts/)
+**Repository:** [View Project](https://github.com/Mike-Ulikhifun/DS-portfolio/tree/main/Assess/Buenos%20Aires%20Charts)
 
 ### 02. Time Series Modelling of Air Quality in Nairobi (Kenya's Capital and Largest City)
 
@@ -119,7 +119,7 @@ solutions deliver meaningful value.
 
 **Tools:** Python 3, pandas, NumPy, scikit-learn, Jupyter Notebook (ipykernel), MongoDB, statsmodels, Custom wrangle.py
 
-**Repository:** [View Project]
+**Repository:** [View Project](https://github.com/Mike-Ulikhifun/DS-portfolio/tree/main/Assess/Kaggle%20Ames%20Housing)
 )
 
 ### 03. Predicting Earthquake Damage in Nepal with Classification Models
@@ -134,7 +134,7 @@ solutions deliver meaningful value.
 
 **Tools:** Python, SQL, SQLite, pandas, DuckDB, scikit-learn, wrangle_nepal_data() function
 
-**Repository:** [View Project](./Assess/Nepal earthquake/)
+**Repository:** [View Project](https://github.com/Mike-Ulikhifun/DS-portfolio/tree/main/Assess/Nepal%20earthquake)
 
 > These are project templates. Replace them with your actual projects,
 > documented methodology, and verified results.
